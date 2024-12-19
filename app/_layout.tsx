@@ -1,22 +1,12 @@
+import { View, Text } from "react-native";
 import React from "react";
 import { Slot } from "expo-router";
-import { GluestackUIProvider } from "@gluestack-ui/themed";
-import { config } from "@gluestack-ui/config";
-import InterestsContextProvider from "@/context/InterestsContext";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { StatusBar } from "react-native";
 
-const appLayout = () => {
+export default function _layout() {
   return (
     <GestureHandlerRootView style={{flex:1}}>
-      <GluestackUIProvider config={config}>
-        <InterestsContextProvider>
-          <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
-          <Slot />
-        </InterestsContextProvider>
-      </GluestackUIProvider>
+      <Slot />
     </GestureHandlerRootView>
   );
-};
-
-export default appLayout;
+}
